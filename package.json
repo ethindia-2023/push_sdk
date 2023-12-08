@@ -1,0 +1,22 @@
+{
+  "name": "push_sdk",
+  "version": "1.0.0",
+  "description": "Push Notification Service SDK for single business node to send notifications to users build using PUSH Protocol",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "NanoNish",
+  "license": "ISC",
+  "dependencies": {
+    "@pushprotocol/restapi": "^1.4.45",
+    "body-parser": "^1.20.2",
+    "ethers": "^5.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "typescript": "^5.3.3"
+  }
+}
