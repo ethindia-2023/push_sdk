@@ -3,3 +3,10 @@ export interface Notification {
     message: string;
     address: string;
 }
+
+export interface GroupRequest {
+    name: string;
+    description: string;
+    image: string;
+    admin: string[];
+}

@@ -1,11 +1,11 @@
 import express, { Request } from 'express';
 import bodyParser from 'body-parser';
-import { init, sendNotification } from '../src/index';
+import { init, sendNotification, createTeamGroup } from '../src/index';
 
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-import { Notification } from '../src/types';
+import { GroupRequest, Notification } from '../src/types';
 
 const app = express();
 
@@ -27,6 +27,18 @@ app.get('/sendNotifs', bodyParser.json(), (req: Request, res) => {
     };
     sendNotification(notif);
     res.send('Hello World!');
+});
+
+app.get('/createGroup', async (req, res) => {
+    let params: GroupRequest = {
+        name: "Test Name",
+        description: "Test",
+        admin: ["0x5F746B46D856165919c43483f35055dD009eD0aa"],
+        image: ""
+    }
+    let group = await createTeamGroup(params);
+    console.log("group created", group);
+    res.send("Sup");
 });
 
 app.listen(process.env.PORT || 3000, async () => {
